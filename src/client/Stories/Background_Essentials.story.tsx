@@ -1,7 +1,7 @@
 import ReactRoblox from "@rbxts/react-roblox";
 import React from "@rbxts/react";
 import { InferFusionProps } from "@rbxts/ui-labs/";
-import { Background } from "Client/Components/Background";
+import { Background } from "client/Components/Background";
 
 const controls = {
 	jobId: "A",

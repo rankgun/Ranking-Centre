@@ -1,7 +1,7 @@
 import ReactRoblox from "@rbxts/react-roblox";
 import React from "@rbxts/react";
 import { InferFusionProps } from "@rbxts/ui-labs/";
-import { JobFrame } from "Client/Components/jobFrame";
+import { JobFrame } from "client/Components/jobFrame";
 
 const controls = {
 	header: "Head Chef",

@@ -1,8 +1,8 @@
 import ReactRoblox from "@rbxts/react-roblox";
 import React from "@rbxts/react";
 import { InferFusionProps } from "@rbxts/ui-labs/";
-import { Background } from "Client/Components/Background";
-import { ResultsFrame, Success, Error } from "Client/Components/resultsFrame";
+import { Background } from "client/Components/Background";
+import { ResultsFrame,Success,Error } from "client/Components/resultsFrame";
 
 const controls = {
 	successFrameVisible: false,

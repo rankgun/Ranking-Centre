@@ -12,7 +12,7 @@ Please keep in mind this software is avaible for everyone under the [RankGun Pol
 2. Make suer prettier is installed.
 3. Ensure rojo and roblox-ts are installed.
 4. Run watch mode: ``npx rbxtsc -w``
-5. In another terminal, run rojo serve to start Rojo
+5. In another terminal, run ``rojo serve`` to start Rojo.
 
 You may want to have [Ui Labs](https://pepeeltoro41.github.io/ui-labs/) installed in order to preview the UI. 
 

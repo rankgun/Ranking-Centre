@@ -16,6 +16,10 @@ Please keep in mind this software is avaible for everyone under the [RankGun Pol
 
 You may want to have [Ui Labs](https://pepeeltoro41.github.io/ui-labs/) installed in order to preview the UI. 
 
+## Tests 
+
+Press run to start the tests (**Not to be confused with Play**).
+
 ## Contributions 
 
 All contributions are highly appreciated and mean a lot to us! Feel free to open them and we'll try to get back to you as fast as we can. 

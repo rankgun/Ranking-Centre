@@ -1,9 +1,6 @@
 {
 	"name": "RankGun Ranking Centre",
-	"globIgnorePaths": [
-		"**/package.json",
-		"**/tsconfig.json"
-	],
+	"globIgnorePaths": ["**/package.json", "**/tsconfig.json"],
 	"tree": {
 		"$className": "DataModel",
 		"ServerScriptService": {
@@ -40,6 +37,30 @@
 			"$className": "Workspace",
 			"$properties": {
 				"FilteringEnabled": true
+			},
+			"Baseplate": {
+				"$className": "Part",
+				"$properties": {
+					"Anchored": true,
+					"Position": {
+						"Vector3": [0, -8, 0]
+					},
+					"Size": {
+						"Vector3": [2048, 16, 2048]
+					}
+				}
+			},
+			"SpawnLocation": {
+				"$className": "SpawnLocation",
+				"$properties": {
+					"Anchored": true,
+					"Position": {
+						"Vector3": [2, 0.5, 2]
+					},
+					"Size": {
+						"Vector3": [12, 1, 12]
+					}
+				}
 			}
 		},
 		"HttpService": {
@@ -52,6 +73,11 @@
 			"$className": "SoundService",
 			"$properties": {
 				"RespectFilteringEnabled": true
+			}
+		},
+		"TextChatService": {
+			"$properties": {
+				"ChatVersion": "TextChatService"
 			}
 		}
 	}

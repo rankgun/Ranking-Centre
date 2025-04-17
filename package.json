@@ -1,15 +1,15 @@
 {
   "name": "rankgunrankingcentre",
   "version": "1.0.0",
-  "description": "",
+  "description": "The RankGun ranking centre allows group roles to be awarded in turn for a roblox product sale.",
   "main": "index.js",
   "scripts": {
     "build": "rbxtsc",
     "watch": "rbxtsc -w"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "RankGun - Noah Hafner",
+  "license": "RankGun PolyForm Shield License",
   "devDependencies": {
     "@rbxts/compiler-types": "^3.0.0-types.0",
     "@rbxts/types": "^1.0.847",
@@ -26,6 +26,8 @@
   "dependencies": {
     "@rbxts/react": "^17.2.3",
     "@rbxts/react-roblox": "^17.2.3",
+    "@rbxts/runit": "^1.3.6",
+    "@rbxts/services": "^1.5.5",
     "@rbxts/t": "^3.2.1",
     "@rbxts/ui-labs": "^2.3.8"
   }

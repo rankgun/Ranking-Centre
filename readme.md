@@ -2,7 +2,7 @@
 
 This is the rankgun ranking centre which is designed to interact with the RankGun API made using [rojo](https://rojo.space/), [roblox-ts](https://roblox-ts.com/docs/quick-start), [roblox-react](https://www.npmjs.com/package/@rbxts/react) and more.
 
-The ranking centre allows group roles to be awarded in turn for a roblox product sale. 
+The RankGun ranking centre allows group roles to be awarded in turn for a roblox product sale. 
 
 Please keep in mind this software is avaible for everyone under the [RankGun PolyForm Shield License](/license.md).
 

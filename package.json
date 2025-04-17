@@ -2,7 +2,6 @@
   "name": "rankgunrankingcentre",
   "version": "1.0.0",
   "description": "The RankGun ranking centre allows group roles to be awarded in turn for a roblox product sale.",
-  "main": "index.js",
   "scripts": {
     "build": "rbxtsc",
     "watch": "rbxtsc -w"

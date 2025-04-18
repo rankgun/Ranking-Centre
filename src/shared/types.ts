@@ -23,6 +23,16 @@ const tCustomRank = t.interface({
 	gamepass: t.number,
 });
 
+interface StateMessage {
+	description: string;
+	visible: boolean;
+}
+
+const tStateMessage = t.interface({
+	description: t.string,
+	visible: t.boolean,
+});
+
 export interface RankCentre {
 	id: string;
 	lastRequest?: string;
@@ -35,4 +45,4 @@ const tRankCentre = t.interface({
 	ranks: t.array(tCustomRank),
 });
 
-export { HttpMethod, tRankCentre };
+export { HttpMethod, tRankCentre, StateMessage, tStateMessage, CustomRank };

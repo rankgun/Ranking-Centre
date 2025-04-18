@@ -18,7 +18,7 @@ const story = {
 				id={"525f"}
 				header={props.controls.header}
 				body={props.controls.body}
-				rank={255}
+				rankId={255}
 				gamepass={2525}
 			/>
 		);

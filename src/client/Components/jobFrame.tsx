@@ -1,14 +1,12 @@
 import React from "@rbxts/react";
+import { MarketplaceService, Players } from "@rbxts/services";
+import { Remotes } from "@rbxts/remo";
+import { CustomRank } from "shared/types";
+import { remotes } from "shared/remotes";
 
-interface JobProps {
-	id: string;
-	header: string;
-	body: string;
-	rank: number;
-	gamepass: number;
-}
+function JobFrame({ header, body, rankId, gamepass }: CustomRank) {
+	const productInfo = MarketplaceService.GetProductInfo(gamepass, Enum.InfoType.GamePass);
 
-function JobFrame({ header, body, rank, gamepass }: JobProps) {
 	return (
 		<frame
 			AnchorPoint={new Vector2(0.5, 0.5)}
@@ -87,6 +85,9 @@ function JobFrame({ header, body, rank, gamepass }: JobProps) {
 					FontFace={new Font("rbxasset://fonts/families/SourceSansPro.json")}
 					Size={UDim2.fromScale(1, 1)}
 					Text={""}
+					Event={{
+						MouseButton1Click: () => remotes.redeem(rankId),
+					}}
 					TextColor3={new Color3()}
 					TextSize={14}
 					TextTransparency={1}
@@ -115,7 +116,7 @@ function JobFrame({ header, body, rank, gamepass }: JobProps) {
 					key={"PriceText"}
 					Position={UDim2.fromScale(0.61963, 0.499999)}
 					Size={UDim2.fromScale(0.345674, 0.684038)}
-					Text={"0.00"}
+					Text={tostring(productInfo.PriceInRobux ?? "0.00")}
 					TextColor3={new Color3(1, 1, 1)}
 					TextScaled={true}
 					TextXAlignment={Enum.TextXAlignment.Left}
@@ -140,6 +141,10 @@ function JobFrame({ header, body, rank, gamepass }: JobProps) {
 					BackgroundTransparency={1}
 					FontFace={new Font("rbxasset://fonts/families/SourceSansPro.json")}
 					key={"Button"}
+					Event={{
+						MouseButton1Click: () =>
+							MarketplaceService.PromptGamePassPurchase(Players.LocalPlayer, gamepass),
+					}}
 					Size={UDim2.fromScale(1, 1)}
 					Text={""}
 					TextColor3={new Color3()}

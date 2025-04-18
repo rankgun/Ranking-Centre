@@ -1,10 +1,10 @@
 import React from "@rbxts/react";
 
-interface BackgroundProps {
+interface BackgroundProps extends React.PropsWithChildren {
 	jobId: string;
 }
 
-function Background({ jobId }: BackgroundProps) {
+function Background({ jobId, children }: BackgroundProps) {
 	return (
 		<frame
 			AnchorPoint={new Vector2(0.5, 0.5)}
@@ -51,6 +51,7 @@ function Background({ jobId }: BackgroundProps) {
 				Size={UDim2.fromScale(1, 1)}
 				ZIndex={0}
 			/>
+			{children}
 		</frame>
 	);
 }

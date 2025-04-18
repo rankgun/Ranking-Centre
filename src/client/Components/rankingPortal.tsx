@@ -1,6 +1,19 @@
-import React from "@rbxts/react";
+import React, { useState, useEffect } from "@rbxts/react";
+import { remotes } from "shared/remotes";
+import { CustomRank } from "shared/types";
+import { JobFrame } from "./jobFrame";
 
-export function rankingPortal({ children }: { children: React.ReactNode }) {
+export function RankingPortal() {
+	const [jobs, setJobs] = useState<CustomRank[]>([]);
+
+	useEffect(() => {
+		remotes.getCentreData.request().then((rankCentre) => {
+			if (rankCentre !== undefined) {
+				setJobs(rankCentre.ranks);
+			}
+		});
+	}, []);
+
 	return (
 		<frame
 			AnchorPoint={new Vector2(0.5, 0.5)}
@@ -49,7 +62,15 @@ export function rankingPortal({ children }: { children: React.ReactNode }) {
 					Padding={new UDim(0.02, 0)}
 					SortOrder={Enum.SortOrder.LayoutOrder}
 				/>
-				{children}
+				{jobs.map((item) => (
+					<JobFrame
+						id={item.id}
+						header={item.header}
+						body={item.body}
+						rankId={item.rankId}
+						gamepass={item.gamepass}
+					/>
+				))}
 
 				<uipadding key={"UIPadding"} PaddingTop={new UDim(0.01, 0)} />
 			</scrollingframe>

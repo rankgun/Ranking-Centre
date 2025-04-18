@@ -16,6 +16,12 @@ Please keep in mind this software is avaible for everyone under the [RankGun Pol
 
 You may want to have [Ui Labs](https://pepeeltoro41.github.io/ui-labs/) installed in order to preview the UI. 
 
+Setup secrets: 
+
+```json
+{"API_URL": ["http://localhost:8000/", "*"],"API_KEY": ["wez0TBV!gmr@xez6xcz", "*"]}
+```
+
 ## Tests 
 
 Press run to start the tests (**Not to be confused with Play**).
@@ -27,3 +33,9 @@ All contributions are highly appreciated and mean a lot to us! Feel free to open
 ## Issues 
 
 Issues may be opened to report issues with the ranking centre, NOT for customer support.
+
+## Publishing
+
+```
+rojo upload --asset_id 109627060036208 --universe_id 7538736750 --api_key {OPEN_CLOUD_API_KEY with universe-places and universe-places:write for specific place} --verbose
+```

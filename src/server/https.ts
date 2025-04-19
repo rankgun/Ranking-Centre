@@ -7,7 +7,7 @@ import BannerNotify from "@rbxts/banner-notify";
 const logger = new rLog();
 let rankcentre: RankCentre;
 
-const URL = "https://hw0lomsin6.execute-api.eu-west-2.amazonaws.com/Prod/";
+const URL = "https://hw0lomsin6.execute-api.eu-west-2.amazonaws.com/Prod";
 const APIKEY = HttpService.GetSecret("API_KEY");
 let workspaceId: string = "";
 

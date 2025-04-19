@@ -16,7 +16,7 @@ function httpRequest(endpoint: string, method: HttpMethod, body?: string): Reque
 		Url: `${URL}/${endpoint}`,
 		Method: method,
 		Body: body,
-		Headers: { "staff-token": `${APIKEY}`, "Content-Type": "application/json" },
+		Headers: { "staff-token": APIKEY as unknown as string, "Content-Type": "application/json" }, // Temporary solution until secret supported in headers type.
 	});
 }
 

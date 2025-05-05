@@ -13,7 +13,7 @@ Players.PlayerAdded.Connect(function (player: Player) {
 
 	if (RunService.IsStudio()) {
 		logger.info("Running In Dev Mode");
-		workspaceId = "68kkUB5pGqw65yy"; // Change this.
+		workspaceId = "1"; // Change this.
 		setId(workspaceId);
 		return;
 	}

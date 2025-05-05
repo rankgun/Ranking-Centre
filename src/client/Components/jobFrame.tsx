@@ -40,8 +40,8 @@ function JobFrame({ header, body, rankId, gamepass }: CustomRank) {
 				BackgroundTransparency={1}
 				FontFace={new Font("rbxassetid://11702779409")}
 				key={"JobDescription"}
-				Position={UDim2.fromScale(0.305566, 0.655844)}
-				Size={UDim2.fromScale(0.559891, 0.397137)}
+				Position={UDim2.fromScale(0.418, 0.655844)}
+				Size={UDim2.fromScale(0.786, 0.397137)}
 				Text={body}
 				TextColor3={new Color3(1, 1, 1)}
 				TextScaled={true}
@@ -77,7 +77,7 @@ function JobFrame({ header, body, rankId, gamepass }: CustomRank) {
 					<uitextsizeconstraint key={"UITextSizeConstraint"} />
 				</textlabel>
 
-				<uiaspectratioconstraint key={"UIAspectRatioConstraint"} AspectRatio={4.35479} />
+				<uiaspectratioconstraint key={"UIAspectRatioConstraint"} AspectRatio={4.355} AspectType={"FitWithinMaxSize"} DominantAxis={"Height"} />
 
 				<textbutton
 					key={"TextButton"}
@@ -124,7 +124,8 @@ function JobFrame({ header, body, rankId, gamepass }: CustomRank) {
 					<uitextsizeconstraint key={"UITextSizeConstraint"} />
 				</textlabel>
 
-				<uiaspectratioconstraint key={"UIAspectRatioConstraint"} AspectRatio={4.35479} />
+				<uiaspectratioconstraint key={"UIAspectRatioConstraint"} AspectRatio={4.355} AspectType={"FitWithinMaxSize"} DominantAxis={"Height"} />
+
 
 				<imagelabel
 					AnchorPoint={new Vector2(0.5, 0.5)}

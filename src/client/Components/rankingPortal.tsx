@@ -54,7 +54,7 @@ export function RankingPortal() {
 				key={"ListScrollingFrame"}
 				Position={UDim2.fromScale(0.474563, 0.488731)}
 				ScrollBarThickness={2}
-				Size={UDim2.fromScale(1.00727, 0.76345)}
+				Size={UDim2.fromScale(1.8, 0.76345)}
 			>
 				<uilistlayout
 					key={"UIListLayout"}
@@ -75,7 +75,12 @@ export function RankingPortal() {
 				<uipadding key={"UIPadding"} PaddingTop={new UDim(0.01, 0)} />
 			</scrollingframe>
 
-			<uiaspectratioconstraint key={"UIAspectRatioConstraint"} AspectRatio={1.77902} />
+			<uiaspectratioconstraint
+				key={"UIAspectRatioConstraint"}
+				AspectRatio={0.98}
+				AspectType={"ScaleWithParentSize"}
+				DominantAxis={"Width"}
+			/>
 		</frame>
 	);
 }

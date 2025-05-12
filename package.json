@@ -13,7 +13,7 @@
     "@rbxts/compiler-types": "^3.0.0-types.0",
     "@rbxts/types": "^1.0.847",
     "@typescript-eslint/eslint-plugin": "^8.30.1",
-    "@typescript-eslint/parser": "^8.30.1",
+    "@typescript-eslint/parser": "^8.32.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",

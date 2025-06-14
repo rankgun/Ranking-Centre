@@ -38,14 +38,21 @@ function fetchCentreData(player: Player): RankCentre | undefined {
 		rankcentre = decodedBody;
 
 		return decodedBody;
-	} catch (error) {
-		logger.error("Failed to fetch rank centre.", { error });
+	} catch (err) {
+		logger.error("Failed to fetch rank centre.", { err });
 		remotes.raiseError.fire(player, { description: "Failed to fetch rank centre.", visible: true });
 	}
 }
 
 function redeem(player: Player, rank: number) {
 	const foundRank: CustomRank | undefined = rankcentre.ranks.find((r) => r.rankId === rank);
+	BannerNotify.Notify({
+		duration: 2.5,
+		header: "Processing.",
+		icon: "",
+		message: "Processing your request..",
+		player,
+	});
 
 	if (foundRank === undefined) {
 		remotes.raiseError.fire(player, { description: "Rank can't be found", visible: true });
@@ -80,15 +87,9 @@ function redeem(player: Player, rank: number) {
 			throw decodedBody;
 		}
 
-		BannerNotify.Notify({
-			duration: 5,
-			header: "Successfully Ranked",
-			icon: "rbxassetid://6023426945",
-			message: "You should have received your role.",
-			player,
-		});
-	} catch (error) {
-		logger.error("Failed to rank individual.", { error });
+		remotes.raiseSuccess.fire(player, { description: "Successfully ranked!", visible: true });
+	} catch (err) {
+		logger.error("Failed to rank individual.", { err });
 		remotes.raiseError.fire(player, { description: "Failed to rank individual.", visible: true });
 	}
 }

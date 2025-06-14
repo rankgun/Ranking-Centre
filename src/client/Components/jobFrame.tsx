@@ -1,6 +1,5 @@
 import React from "@rbxts/react";
 import { MarketplaceService, Players } from "@rbxts/services";
-import { Remotes } from "@rbxts/remo";
 import { CustomRank } from "shared/types";
 import { remotes } from "shared/remotes";
 
@@ -9,150 +8,181 @@ function JobFrame({ header, body, rankId, gamepass }: CustomRank) {
 
 	return (
 		<frame
-			AnchorPoint={new Vector2(0.5, 0.5)}
-			BackgroundColor3={Color3.fromRGB(9, 9, 9)}
-			BackgroundTransparency={0.5}
-			key={"JobFrame"}
-			Position={UDim2.fromScale(0.474888, 0.282762)}
-			Size={UDim2.fromScale(0.966998, 0.109069)}
+			BackgroundColor3={Color3.fromRGB(14, 14, 14)}
+			LayoutOrder={3}
+			key={"Rank"}
+			Position={UDim2.fromScale(-0.00211416, -0.00243309)}
+			Size={new UDim2(1, 0, 0, 80)}
 		>
-			<uicorner key={"UICorner"} CornerRadius={new UDim(0.15, 0)} />
+			<uistroke key={"UIStroke"} Color={Color3.fromRGB(40, 40, 40)} />
 
-			<uistroke key={"UIStroke"} Color={new Color3(1, 1, 1)} Thickness={0.6} />
+			<uilistlayout
+				key={"UIListLayout"}
+				FillDirection={Enum.FillDirection.Horizontal}
+				Padding={new UDim(0, 20)}
+				SortOrder={Enum.SortOrder.LayoutOrder}
+			/>
 
-			<textlabel
-				AnchorPoint={new Vector2(0.5, 0.5)}
-				BackgroundTransparency={1}
-				FontFace={new Font("rbxassetid://11702779409", Enum.FontWeight.Bold, Enum.FontStyle.Normal)}
-				key={"JobName"}
-				Position={UDim2.fromScale(0.215024, 0.297629)}
-				Size={UDim2.fromScale(0.378806, 0.327241)}
-				Text={header}
-				TextColor3={new Color3(1, 1, 1)}
-				TextScaled={true}
-				TextXAlignment={Enum.TextXAlignment.Left}
-			>
-				<uitextsizeconstraint key={"UITextSizeConstraint"} />
-			</textlabel>
+			<uipadding
+				key={"UIPadding"}
+				PaddingBottom={new UDim(0, 20)}
+				PaddingLeft={new UDim(0, 20)}
+				PaddingRight={new UDim(0, 20)}
+				PaddingTop={new UDim(0, 20)}
+			/>
 
-			<textlabel
-				AnchorPoint={new Vector2(0.5, 0.5)}
-				BackgroundTransparency={1}
-				FontFace={new Font("rbxassetid://11702779409")}
-				key={"JobDescription"}
-				Position={UDim2.fromScale(0.418, 0.655844)}
-				Size={UDim2.fromScale(0.786, 0.397137)}
-				Text={body}
-				TextColor3={new Color3(1, 1, 1)}
-				TextScaled={true}
-				TextXAlignment={Enum.TextXAlignment.Left}
-			>
-				<uitextsizeconstraint key={"UITextSizeConstraint"} />
-			</textlabel>
+			<uicorner key={"UICorner"} CornerRadius={new UDim(0, 20)} />
 
-			<frame
-				AnchorPoint={new Vector2(0.5, 0.5)}
-				BackgroundColor3={Color3.fromRGB(9, 9, 9)}
-				BackgroundTransparency={0.5}
-				key={"RedeemButtonFrame"}
-				Position={UDim2.fromScale(0.910679, 0.326731)}
-				Selectable={true}
-				Size={UDim2.fromScale(0.139299, 0.251563)}
-			>
-				<uicorner key={"UICorner"} CornerRadius={new UDim(1, 0)} />
-
-				<uistroke key={"UIStroke"} Color={new Color3(1, 1, 1)} Thickness={0.6} />
+			<frame BackgroundTransparency={1} LayoutOrder={1} key={"Text"} Size={UDim2.fromScale(1, 1)}>
+				<uiflexitem key={"UIFlexItem"} FlexMode={Enum.UIFlexMode.Shrink} />
 
 				<textlabel
-					AnchorPoint={new Vector2(0.5, 0.5)}
+					AutomaticSize={Enum.AutomaticSize.XY}
 					BackgroundTransparency={1}
-					FontFace={new Font("rbxassetid://11702779409", Enum.FontWeight.Medium, Enum.FontStyle.Normal)}
-					key={"RedeemText"}
-					Position={UDim2.fromScale(0.5, 0.5)}
-					Size={UDim2.fromScale(0.584933, 0.684038)}
-					Text={"REDEEM"}
-					TextColor3={new Color3(1, 1, 1)}
-					TextScaled={true}
-				>
-					<uitextsizeconstraint key={"UITextSizeConstraint"} />
-				</textlabel>
-
-				<uiaspectratioconstraint key={"UIAspectRatioConstraint"} AspectRatio={4.355} AspectType={"FitWithinMaxSize"} DominantAxis={"Height"} />
-
-				<textbutton
-					key={"TextButton"}
-					BackgroundTransparency={1}
-					FontFace={new Font("rbxasset://fonts/families/SourceSansPro.json")}
-					Size={UDim2.fromScale(1, 1)}
-					Text={""}
-					Event={{
-						MouseButton1Click: () => remotes.redeem(rankId),
-					}}
-					TextColor3={new Color3()}
-					TextSize={14}
-					TextTransparency={1}
-				/>
-			</frame>
-
-			<uiaspectratioconstraint key={"UIAspectRatioConstraint"} AspectRatio={7.86441} />
-
-			<frame
-				AnchorPoint={new Vector2(0.5, 0.5)}
-				BackgroundColor3={Color3.fromRGB(9, 9, 9)}
-				BackgroundTransparency={0.5}
-				key={"PurchaseButtonFrame"}
-				Position={UDim2.fromScale(0.910679, 0.689315)}
-				Selectable={true}
-				Size={UDim2.fromScale(0.139299, 0.97673)}
-			>
-				<uicorner key={"UICorner"} CornerRadius={new UDim(1, 0)} />
-
-				<uistroke key={"UIStroke"} Color={new Color3(1, 1, 1)} Thickness={0.6} />
-
-				<textlabel
-					AnchorPoint={new Vector2(0.5, 0.5)}
-					BackgroundTransparency={1}
-					FontFace={new Font("rbxassetid://11702779409", Enum.FontWeight.Medium, Enum.FontStyle.Normal)}
-					key={"PriceText"}
-					Position={UDim2.fromScale(0.61963, 0.499999)}
-					Size={UDim2.fromScale(0.345674, 0.684038)}
-					Text={tostring(productInfo.PriceInRobux ?? "0.00")}
-					TextColor3={new Color3(1, 1, 1)}
-					TextScaled={true}
+					FontFace={
+						new Font(
+							"rbxasset://fonts/families/GothamSSm.json",
+							Enum.FontWeight.Medium,
+							Enum.FontStyle.Normal,
+						)
+					}
+					LayoutOrder={2}
+					key={"Body"}
+					Text={body}
+					TextColor3={Color3.fromRGB(100, 100, 100)}
+					TextSize={16}
+					TextTruncate={Enum.TextTruncate.AtEnd}
+					TextWrapped={true}
 					TextXAlignment={Enum.TextXAlignment.Left}
-				>
-					<uitextsizeconstraint key={"UITextSizeConstraint"} />
-				</textlabel>
+				/>
 
-				<uiaspectratioconstraint key={"UIAspectRatioConstraint"} AspectRatio={4.355} AspectType={"FitWithinMaxSize"} DominantAxis={"Height"} />
+				<uilistlayout
+					key={"UIListLayout"}
+					Padding={new UDim(0, 2)}
+					SortOrder={Enum.SortOrder.LayoutOrder}
+					VerticalAlignment={Enum.VerticalAlignment.Center}
+				/>
 
-
-				<imagelabel
-					AnchorPoint={new Vector2(0.5, 0.5)}
+				<textlabel
+					AutomaticSize={Enum.AutomaticSize.XY}
 					BackgroundTransparency={1}
-					Image={"rbxassetid://114937848683704"}
-					key={"RobuxIcon"}
-					Position={UDim2.fromScale(0.336509, 0.466798)}
-					Size={UDim2.fromScale(0.111825, 0.541842)}
-				>
-					<uiaspectratioconstraint key={"UIAspectRatioConstraint"} AspectRatio={0.898734} />
-				</imagelabel>
-
-				<textbutton
-					BackgroundTransparency={1}
-					FontFace={new Font("rbxasset://fonts/families/SourceSansPro.json")}
-					key={"Button"}
-					Event={{
-						MouseButton1Click: () =>
-							MarketplaceService.PromptGamePassPurchase(Players.LocalPlayer, gamepass),
-					}}
-					Size={UDim2.fromScale(1, 1)}
-					Text={""}
-					TextColor3={new Color3()}
-					TextSize={14}
-					TextTransparency={1}
+					FontFace={
+						new Font(
+							"rbxasset://fonts/families/GothamSSm.json",
+							Enum.FontWeight.Medium,
+							Enum.FontStyle.Normal,
+						)
+					}
+					LayoutOrder={1}
+					key={"Header"}
+					Text={header}
+					TextColor3={Color3.fromRGB(200, 200, 200)}
+					TextSize={20}
+					TextTruncate={Enum.TextTruncate.AtEnd}
+					TextWrapped={true}
+					TextXAlignment={Enum.TextXAlignment.Left}
 				/>
 			</frame>
+
+			<textbutton
+				AnchorPoint={new Vector2(1, 0.5)}
+				AutomaticSize={Enum.AutomaticSize.X}
+				BackgroundColor3={Color3.fromRGB(51, 95, 255)}
+				LayoutOrder={2}
+				key={"Redeem"}
+				TextTransparency={1}
+				Event={{
+					MouseButton1Click: () => remotes.redeem(rankId),
+				}}
+				Position={UDim2.fromScale(1, 0.5)}
+				Size={UDim2.fromOffset(36, 36)}
+			>
+				<uicorner key={"UICorner"} CornerRadius={new UDim(1, 0)} />
+
+				<textlabel
+					AnchorPoint={new Vector2(0.5, 0.5)}
+					AutomaticSize={Enum.AutomaticSize.X}
+					BackgroundTransparency={1}
+					FontFace={
+						new Font(
+							"rbxasset://fonts/families/GothamSSm.json",
+							Enum.FontWeight.Medium,
+							Enum.FontStyle.Normal,
+						)
+					}
+					LayoutOrder={2}
+					key={"Redeem"}
+					Position={UDim2.fromScale(0.5, 0.5)}
+					Size={UDim2.fromOffset(18, 18)}
+					Text={"Redeem"}
+					TextColor3={Color3.fromRGB(225, 225, 225)}
+					TextSize={18}
+				/>
+
+				<uilistlayout
+					key={"UIListLayout"}
+					FillDirection={Enum.FillDirection.Horizontal}
+					SortOrder={Enum.SortOrder.LayoutOrder}
+					VerticalAlignment={Enum.VerticalAlignment.Center}
+				/>
+
+				<uipadding
+					key={"UIPadding"}
+					PaddingLeft={new UDim(0, 14)}
+					PaddingRight={new UDim(0, 14)}
+					PaddingTop={new UDim(0, 1)}
+				/>
+			</textbutton>
+
+			<textbutton
+				AnchorPoint={new Vector2(1, 0.5)}
+				AutomaticSize={Enum.AutomaticSize.X}
+				BackgroundColor3={Color3.fromRGB(51, 95, 255)}
+				LayoutOrder={2}
+				TextTransparency={1}
+				key={"Price"}
+				Position={UDim2.fromScale(1, 0.5)}
+				Size={UDim2.fromOffset(36, 36)}
+				Event={{
+					MouseButton1Click: () => MarketplaceService.PromptGamePassPurchase(Players.LocalPlayer, gamepass),
+				}}
+			>
+				<uicorner key={"UICorner"} CornerRadius={new UDim(1, 0)} />
+
+				<textlabel
+					AnchorPoint={new Vector2(0.5, 0.5)}
+					AutomaticSize={Enum.AutomaticSize.X}
+					BackgroundTransparency={1}
+					FontFace={
+						new Font(
+							"rbxasset://fonts/families/GothamSSm.json",
+							Enum.FontWeight.Medium,
+							Enum.FontStyle.Normal,
+						)
+					}
+					LayoutOrder={2}
+					key={"Robux"}
+					Position={UDim2.fromScale(0.5, 0.5)}
+					Size={UDim2.fromOffset(18, 18)}
+					Text={` ${productInfo.PriceInRobux}`}
+					TextColor3={Color3.fromRGB(225, 225, 225)}
+					TextSize={18}
+				/>
+
+				<uilistlayout
+					key={"UIListLayout"}
+					FillDirection={Enum.FillDirection.Horizontal}
+					SortOrder={Enum.SortOrder.LayoutOrder}
+					VerticalAlignment={Enum.VerticalAlignment.Center}
+				/>
+
+				<uipadding
+					key={"UIPadding"}
+					PaddingLeft={new UDim(0, 14)}
+					PaddingRight={new UDim(0, 14)}
+					PaddingTop={new UDim(0, 1)}
+				/>
+			</textbutton>
 		</frame>
 	);
 }

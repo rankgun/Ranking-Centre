@@ -13,7 +13,7 @@
   "devDependencies": {
     "@eslint/js": "^9.29.0",
     "@rbxts/compiler-types": "^3.0.0-types.0",
-    "@rbxts/types": "^1.0.847",
+    "@rbxts/types": "^1.0.858",
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.1",

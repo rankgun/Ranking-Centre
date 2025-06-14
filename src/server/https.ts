@@ -46,6 +46,13 @@ function fetchCentreData(player: Player): RankCentre | undefined {
 
 function redeem(player: Player, rank: number) {
 	const foundRank: CustomRank | undefined = rankcentre.ranks.find((r) => r.rankId === rank);
+	BannerNotify.Notify({
+		duration: 2.5,
+		header: "Processing.",
+		icon: "",
+		message: "Processing your request..",
+		player,
+	});
 
 	if (foundRank === undefined) {
 		remotes.raiseError.fire(player, { description: "Rank can't be found", visible: true });
@@ -80,13 +87,7 @@ function redeem(player: Player, rank: number) {
 			throw decodedBody;
 		}
 
-		BannerNotify.Notify({
-			duration: 5,
-			header: "Successfully Ranked",
-			icon: "rbxassetid://6023426945",
-			message: "You should have received your role.",
-			player,
-		});
+		remotes.raiseSuccess.fire(player, { description: "Successfully ranked!", visible: true });
 	} catch (error) {
 		logger.error("Failed to rank individual.", { error });
 		remotes.raiseError.fire(player, { description: "Failed to rank individual.", visible: true });

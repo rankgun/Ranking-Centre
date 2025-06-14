@@ -14,12 +14,12 @@ const root = createRoot(new Instance("Folder"));
 root.render(
 	<StrictMode>
 		{createPortal(
-			<screengui IgnoreGuiInset={true}>
+			<screengui IgnoreGuiInset={true} ZIndexBehavior={"Sibling"}>
 				<BackgroundAndCanvas>
-					<Success />
-					<Error />
 					<RankingPortal></RankingPortal>
 				</BackgroundAndCanvas>
+				<Success />
+				<Error />
 			</screengui>,
 			playerGui,
 		)}

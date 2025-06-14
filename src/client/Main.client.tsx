@@ -3,7 +3,7 @@ import { Players } from "@rbxts/services";
 import React, { StrictMode } from "@rbxts/react";
 import { createPortal, createRoot } from "@rbxts/react-roblox";
 
-import { Background } from "./Components/Background";
+import { BackgroundAndCanvas } from "./Components/BackgroundAndCanvas";
 import { RankingPortal } from "./Components/rankingPortal";
 import { Success, Error } from "./Components/resultsFrame";
 
@@ -15,11 +15,11 @@ root.render(
 	<StrictMode>
 		{createPortal(
 			<screengui IgnoreGuiInset={true}>
-				<Background jobId={game.JobId}>
+				<BackgroundAndCanvas>
 					<Success />
 					<Error />
 					<RankingPortal></RankingPortal>
-				</Background>
+				</BackgroundAndCanvas>
 			</screengui>,
 			playerGui,
 		)}

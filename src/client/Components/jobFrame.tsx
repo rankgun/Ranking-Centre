@@ -1,6 +1,5 @@
 import React from "@rbxts/react";
 import { MarketplaceService, Players } from "@rbxts/services";
-import { Remotes } from "@rbxts/remo";
 import { CustomRank } from "shared/types";
 import { remotes } from "shared/remotes";
 

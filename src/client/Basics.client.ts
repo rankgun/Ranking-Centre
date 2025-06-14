@@ -8,6 +8,6 @@ while (success === false) {
 		StarterGui.SetCore("ResetButtonCallback", false);
 		success = true;
 	} catch {
-		wait(0.5);
+		task.wait(0.5);
 	}
 }

@@ -38,8 +38,8 @@ function fetchCentreData(player: Player): RankCentre | undefined {
 		rankcentre = decodedBody;
 
 		return decodedBody;
-	} catch (error) {
-		logger.error("Failed to fetch rank centre.", { error });
+	} catch (err) {
+		logger.error("Failed to fetch rank centre.", { err });
 		remotes.raiseError.fire(player, { description: "Failed to fetch rank centre.", visible: true });
 	}
 }
@@ -88,8 +88,8 @@ function redeem(player: Player, rank: number) {
 		}
 
 		remotes.raiseSuccess.fire(player, { description: "Successfully ranked!", visible: true });
-	} catch (error) {
-		logger.error("Failed to rank individual.", { error });
+	} catch (err) {
+		logger.error("Failed to rank individual.", { err });
 		remotes.raiseError.fire(player, { description: "Failed to rank individual.", visible: true });
 	}
 }

@@ -29,7 +29,7 @@
     "@rbxts/banner-notify": "^1.0.1",
     "@rbxts/react": "^17.2.3",
     "@rbxts/react-roblox": "^17.2.3",
-    "@rbxts/remo": "^1.5.1",
+    "@rbxts/remo": "^1.5.2",
     "@rbxts/rlog": "^0.8.0",
     "@rbxts/runit": "^1.4.2",
     "@rbxts/services": "^1.5.5",
